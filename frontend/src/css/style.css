@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    font-family: 'space grotesk', sans-serif;
+}
+
+body {
+    position: relative;
+    width: 1280px;
+    height: 832px;
+    /* padding: 30px; */
+    background: linear-gradient(66.21deg, rgba(255, 196, 107, 0.4) 28.2%, rgba(88, 113, 201, 0.20625) 74.72%), #FFFFFF;
+}
+

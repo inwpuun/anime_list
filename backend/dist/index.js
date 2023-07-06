@@ -16,11 +16,15 @@ dotenv_1.default.config();
 const app = (0, express_1.default)();
 const port = process.env.PORT;
 const corsOptions = {
-    origin: "http://localhost:3000",
-    allowedHeaders: "Origin, Content-Type, Accept",
+    origin: "http://localhost:5173",
+    allowedHeaders: "Origin, Content-Type, Accept, Authorization, X-Request-With, Access-Control-Allow-Origin, X-Custom-Header",
+    optionsSuccessStatus: 200,
     credentials: true,
+    methods: "GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE",
 };
 app.use((0, cors_1.default)(corsOptions));
+// app.use(cors({ origin: "http://localhost:5173" }))
+// app.use(cors())
 app.use(express_1.default.json());
 app.use((0, express_fileupload_1.default)());
 app.set("trust proxy", 1); // trust first proxy

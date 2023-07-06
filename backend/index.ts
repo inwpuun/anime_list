@@ -26,12 +26,18 @@ const app: Express = express()
 const port = process.env.PORT
 
 const corsOptions: cors.CorsOptions = {
-  origin: "http://localhost:3000",
-  allowedHeaders: "Origin, Content-Type, Accept",
+  origin: "http://localhost:5173",
+  allowedHeaders:
+    "Origin, Content-Type, Accept, Authorization, X-Request-With, Access-Control-Allow-Origin, X-Custom-Header",
+  optionsSuccessStatus: 200,
   credentials: true,
+  methods: "GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE",
 }
 
 app.use(cors(corsOptions))
+// app.use(cors({ origin: "http://localhost:5173" }))
+
+// app.use(cors())
 app.use(express.json())
 app.use(fileUpload())
 app.set("trust proxy", 1) // trust first proxy
